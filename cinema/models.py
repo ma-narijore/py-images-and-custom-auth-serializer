@@ -7,7 +7,6 @@ from django.conf import settings
 from django.utils.text import slugify
 
 
-
 class CinemaHall(models.Model):
     name = models.CharField(max_length=255)
     rows = models.IntegerField()
@@ -42,7 +41,7 @@ class Actor(models.Model):
 
 def movie_image_path(instance, filename):
     ext = os.path.splitext(filename)[1]
-    return f"movie/{slugify(instance.title)}-{uuid.uuid4()}{ext}"
+    return f"uploads/movies/{slugify(instance.title)}-{uuid.uuid4()}{ext}"
 
 
 class Movie(models.Model):

@@ -13,7 +13,13 @@ class UserAdmin(BaseUserAdmin):
     # Use email for login and remove username
     fieldsets = (
         (None, {"fields": ("email", "password")}),
-        (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
+        (_("Permissions"), {"fields": (
+            "is_active",
+            "is_staff",
+            "is_superuser",
+            "groups",
+            "user_permissions"
+        )}),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
 
@@ -22,7 +28,13 @@ class UserAdmin(BaseUserAdmin):
             None,
             {
                 "classes": ("wide",),
-                "fields": ("email", "password1", "password2", "is_staff", "is_active"),
+                "fields": (
+                    "email",
+                    "password1",
+                    "password2",
+                    "is_staff",
+                    "is_active",
+                ),
             },
         ),
     )

@@ -37,7 +37,7 @@ class EmailAuthTokenSerializer(serializers.Serializer):
 
         user = authenticate(
             request=self.context.get("request"),
-            email=email,
+            username=email,
             password=password,
         )
 
